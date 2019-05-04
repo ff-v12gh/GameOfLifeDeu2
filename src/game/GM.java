@@ -21,6 +21,35 @@ public class GM {
     }
 
     public static void nextGen(){
+        gen++;
+        System.out.println("Generation: "+gen);
+
+        for(int x=0;x<CELLCOUNT; x++){
+            for(int y=0;y<CELLCOUNT; y++){
+                int n =neighbours(x, y);
+
+                // Regel 1: Wiederbeleben
+                if (n == 3 && !cells[x][y]) {
+                    cells[x][y] = true;
+                }
+
+                // Regel 2: Unterbevölkerung
+                if (n < 2) {
+                    cells[x][y] =false;
+                }
+
+                // Regel 3: Am Leben bleiben
+                if (n == 2 || n == 3) {
+                    // Zelle bleibt unverändert
+                }
+
+                // Regel 4: Überbevölkerung
+                if (n > 3) {
+                    cells[x][y] = false;
+                }
+            }
+
+        }
 
     }
 
