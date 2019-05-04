@@ -66,7 +66,7 @@ public class GM {
                     count++;
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                // ignorieren
             }
         }
 
